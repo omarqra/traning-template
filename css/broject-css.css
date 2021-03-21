@@ -1,0 +1,432 @@
+/* 
+1- commen
+2- general
+3- sections
+    3.1- header
+    3.2- home
+    3.3about
+*/
+
+
+
+
+
+/* commen */
+.contener {
+    width: 80%;
+    margin: auto;
+}
+.clear {
+    clear: both;
+}
+.overlaye {
+    background-color: rgb(33 34 35 / 68%);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+.section-header {
+    font-size: 46px;
+    position: relative;
+    text-align: center;
+    margin: 100px 0px;
+}
+.section-header::after {
+    content: " ";
+    background-color: #6495ed;
+    height: 3px;
+    width: 5%;
+    display: block;
+    position: absolute;
+    top: 120%;
+    right: 45%;
+    transform: translate(-50%, -50%);
+}
+/* general */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+}
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* header */
+.header {
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 9;
+}
+.logo {
+    width: 40%;
+    float: left;
+    height: 50%;
+}
+.logo img {
+    width: 22%;
+    margin-top: 2%;
+}
+.nav {
+    width: 60%;
+    float: left;
+    list-style: none;
+    text-align: right;
+}
+.nav li {
+    display: inline-block;
+    position: relative;
+    text-align: right;
+}
+.nav li a::after {
+    content: " ";
+    display: block;
+    width: 0%;
+    background-color: #6495ed;
+    height: 3px;
+    transition: 0.3s;
+}
+.nav li a:hover::after {
+    width: 100%;
+}
+.nav li a {
+    padding: 15px;
+    line-height: 25px;
+    display: inline-block;
+}
+.nav li i {
+    position: absolute;
+    z-index: 1;
+    left: 50px;
+    top: 50%;
+    padding-left: 10px;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+.blog-dropdown::after {
+    content: "best blog";
+    color: rgb(255, 255, 255);
+    background-color: darkcyan;
+    height: 15px;
+    display: block;
+    padding: 10px 20px ;
+    position: absolute;
+    width: 150%;
+    left: -25%;
+    text-align: center;
+    visibility: hidden;
+    z-index: 1;
+}
+.blog-dropdown:hover::after {
+    visibility: visible;
+} 
+.fa-angle-right {
+    opacity: 0;
+}
+.blog-dropdown:hover .fa-angle-down{
+    opacity: 0;
+}
+.blog-dropdown:hover .fa-angle-right{
+    opacity: 1;
+} 
+.header-background {
+    background-color: rgb(33 34 35 / 100%);
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 60px; 
+    z-index: 7;       
+}
+/* home */
+.home {
+    background-image: url(../images/background/background1.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:100vh ;
+    position: relative;
+    z-index: 8; 
+}
+.home-content {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    text-align: center;   
+}
+.title {
+    font-size: 30px;
+    color: #fff;
+    font-size: 71px;
+}
+.home-content p {
+    font-size: 34px;
+    color: #fff;
+    letter-spacing: 2;
+    margin: 20px 0px;
+}
+.btr {
+    border: none;
+    width: 140px;
+    height: 50px;
+    font-size: x-large; 
+    cursor: pointer; /* شكل الفأرة عند التأشير على الزر يصبح بشكل يد */
+    border-radius: 5px; /* حواف المستند النصي */ 
+    letter-spacing: 1px;   
+}
+.btr-lern {
+    background-color: #008b8b;
+}
+.btr a {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+/* about */
+.about-content {
+    text-align: center;
+    z-index: -2;
+    padding: 30px 0px 120px
+}
+.about-card {
+    width: 30%;
+    height: 225px;
+    float: left;
+    padding: 25px 30px;    
+    border: 2px solid ghostwhite;
+    position: relative;    
+}
+.about-card.middle {
+    margin: 0 5%;
+}
+.about-card i {
+    color: cornflowerblue;   
+}
+.about-card h2 {
+    font-size: 27px;
+    margin: 7px 0px;
+    transition: color 0.5s ;    
+}
+.about-card p {
+    font-size: 17;
+    color: darkgray;
+    margin: 7px 0px 14px;
+}
+.about-card a {
+    color: #08b8b8 ;
+    font-size: 20;    
+}
+.about-card::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    background-color: rgb(59, 57, 57);
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+    z-index: -1;    
+}
+.about-card:hover::after {
+    width: 100%;
+}
+.about-card:hover.about-card h2 {
+    color: rgb(255, 255, 255);
+}
+/* portfolio */
+.portfolio {
+    background-color: #f9f9f9;
+    overflow: hidden; /* مهمة حتى يأخذ الأب طول الأبناء والتخلص من مشاكل الفلوت */
+    padding-bottom: 120px;
+}
+.portfolio-card {
+    width: 30%;
+    float: left;
+    margin: 20px 0px ;
+    position: relative;
+    padding: 15px;
+}
+.portfolio-card.mg {
+    margin: 20px 5%;
+}
+.portfolio-card img {
+    width: 100%;
+}
+
+.portfolio-image-hidden {
+    background-color: rgb(33 34 35 / 68%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;   
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s; 
+}
+.portfolio-image-hidden-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 300px;        
+}
+.portfolio-card:hover .portfolio-image-hidden {
+    visibility: visible;
+    opacity: 1;
+}
+.portfolio-image-hidden-content i,
+.portfolio-image-hidden-content span,
+.portfolio-image-hidden-content h3 {
+    position: relative;
+    top: 13px;
+    opacity: 0;
+    transition: opacity 0.5s, top 0.5s;
+    visibility: hidden;
+}
+.portfolio-card:hover .portfolio-image-hidden-content i,
+.portfolio-card:hover .portfolio-image-hidden-content span,/* كتير مهم انك لا تنسى تحط الهفر قبل كل عنصر حتى لما بتجمعنا يا صديقي */
+.portfolio-card:hover .portfolio-image-hidden-content h3 {
+    opacity: 1;
+    top: 0;
+    visibility: visible;
+}
+.portfolio-image-hidden-content span {
+    font-size: 20px;
+    color: cornflowerblue;
+    transition-delay: 0.2s;
+}
+.portfolio-image-hidden-content h3 {
+    color: #fff;
+    margin: 0px 0px 20px;
+    font-size: 24px;
+    transition-delay: 0.4s; 
+}
+.portfolio-image-hidden-content i {
+    color: rgb(255, 255, 255);
+    background-color: cornflowerblue;
+    height: 35px;
+    width: 35;
+    line-height: 35px;
+    transition-delay: 0.5s;             
+}
+/* services */
+.sevices-content {
+    overflow: hidden;
+    margin-bottom: 120px;
+}
+.services-card{
+    width: 30%;
+    margin-bottom: 40px ;
+    float: left;
+    padding: 20px 15px 30px 70px;
+    position: relative;
+    border: 2px solid ghostwhite ;
+}
+.services-card::after{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    background-color: rgb(59, 57, 57);
+    top: 0;
+    left: 0;
+    transition: 0.5s;      
+    z-index: -1;
+}
+.services-card:hover::after {
+    width: 100%;
+}
+
+.services-card.mg{
+    margin: 0px 5%;
+}
+.services-card i {
+    position: absolute;
+    top: 21px;
+    left: 25px;
+    color: #08b8b8;
+}
+.services-card h3 {
+    font-size: x-large;
+    margin-bottom: 10px;
+    transition: 0.5s;
+}
+.services-card:hover.services-card h3{
+    color: blanchedalmond;
+}
+.services-card p {
+    color: darkgray;
+}
+/* cool */
+.cool {
+    padding: 120px 0px;
+    background-color: #f9f9f9;
+}
+.cool-content {
+    float: left;
+    width: 50%;    
+}
+.cool-content h2 {
+    text-align: left;
+    margin: 10px 0px 50px;
+}
+
+.cool-content h2::after {
+    right: 87%;
+    width: 8%
+}
+.cool-content p {
+    color: #a9a9a9;
+    line-height: 26px;
+    width: 95%;
+}
+.cool-content ul {
+    list-style: none;
+    color: #a9a9a9;       
+}
+.cool-content ul li {
+    margin: 12px 0;
+}
+.cool-content ul li i{
+    border: 2px solid #a9a9a9;
+    height: 30px;
+    width: 30px;
+    padding: 6px;
+    border-radius: 50%;
+    color: #08b8b8;
+    margin-right: 6px;
+}
+.cool-image {
+    float: left;
+    width: 50%;    
+}
+.cool-image img {
+    width: 100%;
+}
+.cool-image ul {
+    list-style: none;    
+    text-align: center;
+}
+.cool-image ul li {
+    width: 10px;
+    height: 10px;
+    background-color: #7b70705c;
+    display: inline-block;
+    border-radius: 50%;
+    margin: 15px 5px;        
+}
+.cool-image ul li.first {
+    background-color: #08b8b8;
+    width: 17px;
+    height: 10;
+    border-radius: 30%;
+}
+.cool-image ul li:hover{
+    background-color: #08b8b8;
+    cursor: pointer;
+}
